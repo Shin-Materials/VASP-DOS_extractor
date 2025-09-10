@@ -13,13 +13,18 @@ This script intends to simplify the plotting process of DOS from [VASP](http://c
 Instead of this hassle, the DOS-extractor script exports data file in array form (**typically less than 1MB**), which is **ready to plot in python plotting script**.
 (Note that you should install pymatgen (http://pymatgen.org/) before using this script.)
 
+### List of features to be updated (September 2025)
+ - Accept different notations for d-orbitals (ex: dx2y2 should be accepted as dx2)
+ - Comprehensive mode: export all orbital-based data
+ - Example jupyter notebook file to plot the data.
+   
 ------------------------------------
 ### With DOS_extractor.py, these four process can be done with one command line:
  ```
   $ python DOS_extractor.py [xml_filename] [out_filename] [entries_or_options]
  ```
 - [xml_filename]: name of vasprun.xml file.
-- [out_filename]: name of DOS data file. By default it follows the printing format of ***p4vasp***. For spin polarized system, spin up/down 
+- [out_filename]: name of DOS data file. By default it follows the printing format of **p4vasp**, being easy to use xmgrace. For spin polarized system, spin up/down 
   - p4vasp format: This format is collection of data arrays. Each data array represents each entry, including total DOS, which are composed of two columns; column1 for energy and column2 for DOS of entry. line1 is header starting with #, which shows the Band gap, and list of data in the output file.
   - block format: This format is intuitive structured data with row of energy grid and column of each entry. The line1 contains labels.
 - [entries]: Entry can be element or specific atom. Atom label follows the [VESTA](http://jp-minerals.org/vesta/en/), for example atoms in BaTiO3 unit cell would be Ba1, Ti1, O1, O2, O3. The script also supports orbital projection by specifiying orbital after dash (-). Examples and nomenclatures are as follows.
