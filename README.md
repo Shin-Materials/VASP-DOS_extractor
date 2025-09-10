@@ -1,16 +1,18 @@
 # VASP_DOS_extractor
 ------------------
-### Simple description:
-Pymatgen-based python script to extract density of states (DOS) and projected DOS from vasprun.xml file
+### Simple description of this code:
+Pymatgen-based python script to extract density of states (DOS) and projected DOS (pDOS) data from vasprun.xml file.
   
 ### What does this do:
-This script replaces one of the most common use of p4vasp: extracting DOS data from [VASP](http://cms.mpi.univie.ac.at/vasp/) output, which is a density functional theory (DFT) calculation program. Though [p4vasp](http://www.p4vasp.at/#/) is with intuitive GUI, extracting DOS data can easily take time especially when the number of atom, band, and energy grid are larger. Note that you should install pymatgen (http://pymatgen.org/) before using this script.
+This script intends to simplify the plotting process of DOS from [VASP](http://cms.mpi.univie.ac.at/vasp/) output, which is a density functional theory (DFT) calculation program. I used to use [p4vasp](http://www.p4vasp.at/#/) for this purpose, but since the program became out of service, the alternatives are typically difficult to use for beginners.   
+**A typical process with VASP-related packages involves following:**
+  - Download xml file to local computer **(often over 100 MB)**
+  - Requires learning specific syntax for each package
+  - Required usage of **built-in** plotting tool, which is difficult to customize for publication quality
   
-### The process with p4vasp usually happens as follows:
-  - Download xml file to local computer ***(often over 100 MB)***
-  - Open p4vasp and open xml file
-  - Plot element or individual atom of interest to plot the local projection of DOS (PDOS). ***(This process takes most of the time)***
-  - Export data to designated filename ***(This file is usually less than 1MB)***
+Instead of this hassle, the DOS-extractor script exports data file in array form (**typically less than 1MB**), which is **ready to plot in python plotting script**.
+(Note that you should install pymatgen (http://pymatgen.org/) before using this script.)
+
 ------------------------------------
 ### With DOS_extractor.py, these four process can be done with one command line:
  ```
